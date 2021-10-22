@@ -21,7 +21,7 @@ steps:
   inputs:
     verbose: false
 
-- script: './node_modules/.bin/node-sass mslearn-tailspin-spacegame-web-N/DotNetAppSqlDb/wwwroot --output mslearn-tailspin-spacegame-web-N/DotNetAppSqlDb/wwwroot'
+- script: './node_modules/.bin/node-sass DotNetAppSqlDb/wwwroot --output DotNetAppSqlDb/wwwroot'
   displayName: 'Compile Sass assets'
 
 - task: gulp@1
@@ -29,7 +29,7 @@ steps:
 
 - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
-  workingDirectory: mslearn-tailspin-spacegame-web-N/DotNetAppSqlDb/wwwroot
+  workingDirectory: DotNetAppSqlDb/wwwroot
 
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
